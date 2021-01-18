@@ -1,11 +1,7 @@
-hussamsal
-
-oop ex6 
-
 =============================
 =      File description     =
 =============================
-oop.ex6.main Package:
+
 Checker.java - This an abstract class , the purpose of this class to check the code of the file 
 , its check the method name global and local variable and if/ while line , if theres any error in 
 line this class will throw an Exception 
@@ -18,7 +14,8 @@ example it have the method regex pattern and variable
 
 Reader.java - This class cotain two main method , firstRead which read the file for the first time and 
 check the code to array , while saving to array its check the method line ( name of the method, the 
-type of arguments and theres name and the pattern of the method ) , and check the global variable, and save them to hashMap. The second method its secondRead the purpose of this method to check 
+type of arguments and theres name and the pattern of the method ) , and check the global variable
+, and save them to hashMap. The second method its secondRead the purpose of this method to check 
 the code inside the method if/while and local variable .
 
 Sjavac.java - This class contain only main which start the program, its recived path from argv
@@ -63,64 +60,6 @@ Compiler class its print 0 in case theres not error in the code, in case of erro
 and print the right msg of the error and exit from the program 
 
 
-
-=============================
-=    Implementation details =
-=============================
-
-For the method Class its contain HashMap and LinkedList, that contain the method name 
-and there object , The aim of the hashMap to check if the mathod in the are exist and to get it 
-and the linkedList the aims of it to save the argument variable to get them in order 
-
-In the root of the tree its have two hashMap , one for global variable and the other for 
-method object  
-In case of casting int a= n ; we searching of the value of n in the current scope if we didnt find it
-we go to the parent and check if its there we doing that until we get to global variable 
-if its there we check the type of them and if n is initinlize or not , in case of error its throw exception
-
-The scope class is empty but its extend from the MyNode make it to give it the right name 
-for the scopes 
-
-In the chcek class theres only one matcher and one patterns for regexs therefore the data can be 
-transform between the method by calling the matchers 
-   
-
-=============================
-=    Answering the questions =
-=============================
-
-6.1)
- - In case of error the Checker class will set the Error msg and will return boolean thats 
-will will be true if theres not any problem ,false otherwise in case of false the program will throw 
-an exception Throwing exception will be in Reader class and in Compiler class will print the 
-error . i saw thats building a method that called setError in Checker class and set the error msg 
-from there will be more easer and make the code more readable 
-
-6.2. )
-1- I will add float name to Patterns name that contain the allowed type and add a method 
-that check if the variable is float and in valueMatchType method gonna add float 
-
-2-  For Classes - Need to add regex pattern for the class line , And for handling class 
-we need to add a class that its have a HashMap the value of the HashMap will be trees, Like 
-the one i implement it .
-
-For different methods type add new field in method object that called type, and add new method 
-in checker that check the return if the return is the same type of the method 
-
-
-6.3) 
-
-METHOD_LINE_PATTERN
-("^\\s*(void\\s+){1}\\s*([^0-9_]{1}[a-zA-Z0-9_]*)\\s*[(]{1}(.*)[)]{1}\\s*([{]{1}){1}\\s*$")
-
-This regexs check if the method line start with a void and then the method name 
-and make a group for the arguments between the brackets without using spilt for ()
-and check if the last characters are { 
-
-IF_WHILE_PATTERN
-("^\\s*\\b(if|while){1}\\s*[(]{1}\\s*(.+)\\s*[)]{1}\\s*[{]{1}\\s*$")
-
-This regexs for if / while line in this regex we can easily get what between the brackets 
 
 
 
