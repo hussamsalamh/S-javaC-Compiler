@@ -1,4 +1,4 @@
-package oop.ex6.main;
+
 
 /**
  * This class Print 0 if theres not Error in the code file
